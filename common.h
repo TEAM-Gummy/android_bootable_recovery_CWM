@@ -48,17 +48,19 @@ int ui_get_text_cols();
 void ui_increment_frame();
 
 #ifdef ENABLE_LOKI
-// Toggle for loki support
 extern int loki_support_enabled;
+int loki_check();
 #endif
 
 // Display some header text followed by a menu of items, which appears
 // at the top of the screen (in place of any scrolling ui_print()
 // output, if necessary).
 int ui_start_menu(const char** headers, char** items, int initial_selection);
+
 // Set the menu highlight to the given index, and return it (capped to
 // the range [0..numitems).
 int ui_menu_select(int sel);
+
 // End menu mode, resetting the text overlay so that ui_print()
 // statements will be displayed.
 void ui_end_menu();
@@ -150,5 +152,7 @@ FILE* fopen_path(const char *path, const char *mode);
 
 int ui_get_selected_item();
 int ui_is_showing_back_button();
+
+void set_perf_mode(int on);
 
 #endif  // RECOVERY_COMMON_H
