@@ -202,6 +202,7 @@ int vold_dispatch(int code, char** tokens, int len) {
 
     int i = 0;
     int ret = 0;
+    len = len;
 
     if (code == VolumeListResult) {
         // <code> <seq> <label> <path> <state>

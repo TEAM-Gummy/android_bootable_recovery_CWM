@@ -182,6 +182,8 @@ out:
 
 static void *event_thread_func(void* v) {
 
+    v =v;
+
     // if monitor() returns, it means we lost the connection to vold
     while (1) {
 
